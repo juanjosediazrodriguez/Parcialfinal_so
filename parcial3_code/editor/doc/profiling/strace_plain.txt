@@ -1,0 +1,31 @@
+=== A. CLÁSICO (texto plano, sin compresión ni cifrado) ===
+Archivo        : /tmp/bench_plain.txt
+Tamaño en disco: 1048576 bytes (1024.0 KB)
+
+Bytes al disco : 1048576
+write() calls  : 256
+Tiempo I/O     : 17.317 ms
+CPU (user)     : 0.000 ms  (sin transformación)
+
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 88.49    0.002829          11       257           write
+  9.63    0.000308         102         3           close
+  1.88    0.000060          30         2           munmap
+  0.00    0.000000           0         1           read
+  0.00    0.000000           0         3           fstat
+  0.00    0.000000           0         9           mmap
+  0.00    0.000000           0         3           mprotect
+  0.00    0.000000           0         3           brk
+  0.00    0.000000           0         2           pread64
+  0.00    0.000000           0         1         1 access
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           set_tid_address
+  0.00    0.000000           0         3           openat
+  0.00    0.000000           0         1           set_robust_list
+  0.00    0.000000           0         1           prlimit64
+  0.00    0.000000           0         1           getrandom
+  0.00    0.000000           0         1           rseq
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.003197          10       294         1 total

@@ -1,0 +1,37 @@
+=== B. COMPRIMIDO (solo Huffman, sin cifrado) ===
+Archivo        : /tmp/bench_compressed.bin
+Original       : 1048576 bytes (1024.0 KB)
+Comprimido     : 540336 bytes (527.7 KB)
+Ahorro I/O     : 48.5%
+
+CPU compresión : 7.065 ms
+CPU cifrado    : 0.000 ms  (sin cifrado)
+CPU total      : 7.065 ms
+
+Bytes al disco : 540400
+write() calls  : 132
+Tiempo I/O     : 9.686 ms
+
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 58.15    0.001412          10       133           write
+ 12.19    0.000296          98         3           close
+  7.74    0.000188          17        11           mmap
+  5.27    0.000128          42         3           mremap
+  3.50    0.000085          21         4           brk
+  3.38    0.000082          20         4           munmap
+  1.98    0.000048          16         3           openat
+  1.77    0.000043          14         3           mprotect
+  1.44    0.000035          11         3           fstat
+  0.86    0.000021          10         2           pread64
+  0.62    0.000015          15         1         1 access
+  0.45    0.000011          11         1           read
+  0.45    0.000011          11         1           arch_prctl
+  0.45    0.000011          11         1           prlimit64
+  0.45    0.000011          11         1           getrandom
+  0.45    0.000011          11         1           rseq
+  0.41    0.000010          10         1           set_tid_address
+  0.41    0.000010          10         1           set_robust_list
+  0.00    0.000000           0         1           execve
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.002428          13       178         1 total

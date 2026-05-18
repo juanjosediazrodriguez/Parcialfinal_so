@@ -1,0 +1,39 @@
+=== C. COMPRIMIDO + CIFRADO (Huffman → RC4) ===
+Archivo        : /tmp/bench_encrypted.bin
+Original       : 1048576 bytes (1024.0 KB)
+Comprimido     : 540336 bytes (527.7 KB)
+Cifrado (RC4)  : 540336 bytes (sin padding — RC4 es stream cipher)
+
+Ahorro I/O     : 48.5%
+
+CPU compresión : 7.245 ms  ← costo de Huffman
+CPU cifrado    : 1.457 ms  ← costo adicional de RC4
+CPU total      : 8.703 ms
+
+Bytes al disco : 540400
+write() calls  : 132
+Tiempo I/O     : 11.105 ms
+
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+ 85.84    0.002262          17       133           write
+ 10.21    0.000269          89         3           close
+  3.95    0.000104          26         4           munmap
+  0.00    0.000000           0         1           read
+  0.00    0.000000           0         3           fstat
+  0.00    0.000000           0        11           mmap
+  0.00    0.000000           0         3           mprotect
+  0.00    0.000000           0         5           brk
+  0.00    0.000000           0         2           pread64
+  0.00    0.000000           0         1         1 access
+  0.00    0.000000           0         3           mremap
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           set_tid_address
+  0.00    0.000000           0         3           openat
+  0.00    0.000000           0         1           set_robust_list
+  0.00    0.000000           0         1           prlimit64
+  0.00    0.000000           0         1           getrandom
+  0.00    0.000000           0         1           rseq
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.002635          14       179         1 total

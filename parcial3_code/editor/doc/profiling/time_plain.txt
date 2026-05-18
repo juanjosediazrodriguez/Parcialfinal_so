@@ -1,0 +1,11 @@
+=== A. CLÁSICO (texto plano, sin compresión ni cifrado) ===
+Archivo        : /tmp/bench_plain.txt
+Tamaño en disco: 1048576 bytes (1024.0 KB)
+
+Bytes al disco : 1048576
+write() calls  : 256
+Tiempo I/O     : 1.340 ms
+CPU (user)     : 0.000 ms  (sin transformación)
+
+0.00user 0.00system 0:00.01elapsed 30%CPU (0avgtext+0avgdata 2560maxresident)k
+80inputs+2048outputs (3major+330minor)pagefaults 0swaps
